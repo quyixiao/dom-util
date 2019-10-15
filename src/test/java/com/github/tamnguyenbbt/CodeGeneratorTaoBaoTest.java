@@ -1,13 +1,20 @@
 package com.github.tamnguyenbbt;
 
 import com.github.tamnguyenbbt.dom.*;
+import com.sun.deploy.net.HttpUtils;
+import com.xiaoleilu.hutool.http.HttpUtil;
 import org.jsoup.nodes.Document;
 import org.junit.Before;
 import org.junit.Test;
+import org.seimicrawler.xpath.JXDocument;
+
 import java.io.File;
 import java.io.IOException;
+import java.util.ArrayList;
+import java.util.Iterator;
+import java.util.List;
 
-public class CodeGeneratorTest
+public class CodeGeneratorTaoBaoTest
 {
     private DomUtil domUtil;
 
@@ -18,21 +25,23 @@ public class CodeGeneratorTest
     }
 
     @Test
-
     public void simpleTestMethodCodeGen() throws IOException
     {
+
+        String content = HttpUtil.get("https://www.baidu.com");
+
+
+
         //Arrange
-        String resourcePath = getClass().getClassLoader().getResource("google-signup.html").getFile();
-        Document document = domUtil.htmlFileToDocument(resourcePath);
+        Document document = domUtil.getDocument(content);
         CodeGenerator codeGenerator = new CodeGenerator(document, new SeleniumCodeGenAssociation());
 
         //Act
         String className = codeGenerator.getCodeGenClassName();
-        System.out.println(className);
-        String folder = CodeGeneratorTest.class.getProtectionDomain().getCodeSource().getLocation().getPath();
-        System.out.println(folder);
-        String fileName = folder + File.separator + className + "Generated.java";
-        System.out.println(fileName);
-        codeGenerator.generatePageObjectModelClass();
+
+
     }
+
+
+
 }
