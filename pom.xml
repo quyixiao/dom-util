@@ -56,7 +56,7 @@
     <properties>
         <version.jsoup>1.11.3</version.jsoup>
         <version.commons-lang>2.6</version.commons-lang>
-        <version.junit>4.12</version.junit>
+        <version.junit>4.13.1</version.junit>
         <version.selenium-api>3.9.1</version.selenium-api>
         <version.selenium-support>3.9.1</version.selenium-support>
         <version.selenium-chrome-driver>3.9.1</version.selenium-chrome-driver>
