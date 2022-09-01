@@ -54,7 +54,7 @@
     </distributionManagement>
 
     <properties>
-        <version.jsoup>1.11.3</version.jsoup>
+        <version.jsoup>1.15.3</version.jsoup>
         <version.commons-lang>2.6</version.commons-lang>
         <version.junit>4.12</version.junit>
         <version.selenium-api>3.9.1</version.selenium-api>
